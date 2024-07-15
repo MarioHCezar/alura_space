@@ -88,6 +88,7 @@ def index(request):
 
 ## Carregando arquivos estáticos (estilos, etc)
 - necessário definir no arquivo settings.py em qual diretório ficarão os arquivos.
+- criar um diretório static dentro de setup para armazenar estilos e assets
 - definir STATICFILES_DIRS e STATIC_ROOT:
 ```
 STATIC_URL = 'static/'
@@ -98,6 +99,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ```
+- rodar comando ```python manage.py collectstatic```
+- dentro do template html, envolver os endereços dos arquivos de estilos e assets com a marcação ```{% static '' %}```
+- Ex.: ```<link rel="stylesheet" href="{% static '/styles/style.css' %}">```
 .
 .
 . 
