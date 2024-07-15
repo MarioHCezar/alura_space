@@ -59,7 +59,7 @@ urlpatterns = [
 ```
 ## Ajustando uso de templates:
 
-Ajustar arquivo settings.py para incluir o diretório dos templates:
+- Ajustar arquivo settings.py para incluir o diretório dos templates:
 
 ```
 TEMPLATES = [
@@ -78,7 +78,13 @@ TEMPLATES = [
     },
 ]
 ```
+- ajustar método index em nome_do_app views.py para tratar a requisição e incluir o arquivo do template:
+```
+from django.shortcuts import render
 
+def index(request):
+        return render(request, 'index.html')
+```
 .
 .
 . 
