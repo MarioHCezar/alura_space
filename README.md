@@ -9,7 +9,10 @@ pip freeze > requirements.txt
 Iniciar projeto Django:
 django-admin startproject setup .
 
-Esconder SECRETE_KEY:
+Carregar projeto:
+python3 manage.py runserver
+
+Esconder SECRET_KEY:
 importar os
 importar load_dotenv de dotenv
 criar arquivo .env com a SECRET_KEY
