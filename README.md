@@ -85,6 +85,19 @@ from django.shortcuts import render
 def index(request):
         return render(request, 'index.html')
 ```
+
+## Carregando arquivos estáticos (estilos, etc)
+- necessário definir no arquivo settings.py em qual diretório ficarão os arquivos.
+- definir STATICFILES_DIRS e STATIC_ROOT:
+```
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'setup/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+```
 .
 .
 . 
