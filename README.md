@@ -24,9 +24,9 @@
 ## Criar view:
 - acessar o arquivo views.py do app desejado e definir função para acessar resposta http.
 - Ex.:
-'''from django.http import HttpResponse
+```from django.http import HttpResponse
 def index(request):
-        return HttpResponse('utilizar tags html ou retornar resposta da requisição')''' 
+        return HttpResponse('utilizar tags html ou retornar resposta da requisição')``` 
 
 .
 .
