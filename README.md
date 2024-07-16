@@ -126,4 +126,13 @@ urlpatterns = [
         path('imagem/', imagem)
 ]
 ```
+- é uma boa prática atribuir um name ao path:
+```
+urlpatterns = [
+        path('', index, name='index'),
+        path('imagem/', imagem, name='imagem'),
+]
+```
+- com isso, a vinculução no template fica mais simples e legível:
+```<a href="{% url 'index' %}">```
 continua...
