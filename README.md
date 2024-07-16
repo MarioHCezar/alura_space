@@ -115,4 +115,15 @@ def index(request):
 def imagem(request):
         return render(request, 'galeria/imagem.html') 
 ```
+- após isso, deve ser criada a rota (path) no urlpatterns do arquivo urls.py da view desejada.
+- Ex.:
+```
+from django.urls import path
+from galeria.views import index, imagem
+
+urlpatterns = [
+        path('', index),
+        path('imagem/', imagem)
+]
+```
 continua...
