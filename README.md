@@ -102,8 +102,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 - rodar comando ```python manage.py collectstatic```
 - dentro do template html, envolver os endereços dos arquivos de estilos e assets com a marcação ```{% static '' %}```
 - Ex.: ```<link rel="stylesheet" href="{% static '/styles/style.css' %}">```
-.
-.
-. 
 
+## Renderizando outras páginas:
+- para renderizar outras páginas, deve ser criada uma nova função para cada template que será exibido.
+- Ex.:
+```
+from django.shortcuts import render
+
+def index(request):
+        return render(request, 'galeria/index.html')
+
+def imagem(request):
+        return render(request, 'galeria/imagem.html') 
+```
 continua...
