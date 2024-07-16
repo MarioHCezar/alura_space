@@ -135,4 +135,32 @@ urlpatterns = [
 ```
 - com isso, a vinculução no template fica mais simples e legível:
 ```<a href="{% url 'index' %}">```
-continua...
+
+## 'Componentização' do código com DRY e partials
+- para evitar repetição desnecessária de código, pode ser criado um novo arquivo html separando as responsabilidades.
+- por exemplo, pode ser criado um arquivo base.html, que será um container de todo o código principal. Para utilizar esse código
+no index.html, é necessário informar que tal conteúdo será utilizado:
+```
+{% extends 'galeria/base.html' %}
+{% load static %}
+```
+- depois, é feito o inverso, passando o conteúdo do <body> de "index.html" para "base.html". Para isso, utilizam-se as propriedades block content e endblock:
+```
+<body>
+        {% block content %}{% endblock %}
+</body>
+```
+- a utilização de partials pode ser feita com partes da página, que funcionam como pequenos componentes reutilizáveis. Para isso, deve ser observada a seguinte estrutura:
+```
+{% load static %}
+<footer class="rodape">
+...
+</footer>
+```
+
+```
+<body>
+        {% block content %}{% endblock %}
+        {% include 'galeria/partials/_footer.html' %}
+</body>
+```
